@@ -1,0 +1,489 @@
+body {
+  color: $primary;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+input {
+  &:focus-visible {
+    outline: $charcoal auto 4px;
+  }
+}
+
+.main {
+  overflow: hidden;
+}
+
+.container {
+  padding-left: 16px;
+  padding-right: 16px;
+  @include media-breakpoint-down(md) {
+    max-width: 90%;
+  }
+
+}
+
+.link-opacity {
+  &:hover {
+    text-decoration: none;
+    opacity: 0.6;
+  }
+}
+
+.hr {
+  margin-top: 0;
+  margin-bottom: 0;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.hr {
+  &.red-divider {
+    border-top: 4px solid $danger;
+    margin-top: 50px;
+  }
+}
+
+.line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  &.lc-3 {
+    -webkit-line-clamp: 3;
+  }
+}
+
+.emb-btn {
+  @include flex-v-center();
+  padding: 10px 12px 10px 0;
+  height: 40px;
+  background: white;
+  border: none;
+  border-radius: 0 $border-radius;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.text-title {
+  font-family: $font-family-edge;
+}
+
+.logo-img {
+  width: 124px;
+  height: 38px;
+}
+
+.icon-wrap {
+  @include flex-center();
+  border-radius: $border-radius;
+  background: $mercury-grey;
+  width: 41px;
+  height: 41px;
+}
+
+.top-nav {
+  position: absolute;
+  z-index: 5;
+  @include media-breakpoint-up(lg) {
+    position: static;
+    li {
+      display: inline-block;
+    }
+  }
+}
+
+.navbar {
+  .tar-btn {
+    button:focus {
+      outline: 1px solid $primary;
+    }
+  }
+  .navbar-toggler {
+    color: $primary;
+    border-color: $mercury-grey;
+  }
+
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(0, 0, 0, 0.9)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  }
+
+  .drop-pad {
+    @include media-breakpoint-down(md) {
+      background: $mercury-grey;
+      opacity: 0.75;
+      padding: 0 14px 0 10px;
+      margin-top: 4px;
+      border-radius: 0 0 $border-radius $border-radius;
+      width: 87vw;
+    }
+
+    @include media-breakpoint-down(sm) {
+      width: 83vw;
+    }
+
+  }
+}
+
+.nav-item {
+  @include media-breakpoint-up(lg) {
+    .nav-link {
+      margin-left: 24px;
+      margin-right: 24px;
+      padding: 2px 0;
+
+      &.f-link {
+        margin-left: 0;
+        padding-left: 0;
+      }
+    }
+  }
+
+  &.active {
+    font-weight: 700;
+  }
+}
+
+.separator {
+  @include media-breakpoint-up(lg) {
+    border-left: 0 solid transparent;
+    position: relative;
+
+    &:after {
+      padding: 0;
+      margin: 0;
+      display: block;
+      content: "";
+      width: 1px;
+      position: absolute;
+      bottom: 0;
+      top: 6px;
+      left: -28px;
+    }
+
+    &.s-line:after {
+      height: 58%;
+      background-color: $gainsboro-grey;
+    }
+  }
+}
+
+form.search {
+  display: inline-flex;
+  max-width: 0;
+  overflow: hidden;
+  transition: 0.2s ease all;
+  &.spread-out {
+    max-width: 100%;
+  }
+}
+
+.search-icon {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.news-brief {
+  margin-top: 53px;
+
+  .hr {
+    margin: 30px 0 24px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding-left: 86px;
+  }
+
+  .separator {
+    border-left: 0 solid transparent;
+    position: relative;
+
+    &:after {
+      padding: 0;
+      margin: 0;
+      display: block;
+      content: "";
+      width: 6px;
+      position: absolute;
+      bottom: 0;
+      top: 6px;
+      left: -18px;
+    }
+
+    &.s-line:after {
+      height: 78%;
+      background-color: $brick-red;
+    }
+  }
+}
+
+.extender {
+  height: 542px;
+  z-index: 1;
+
+  .top-img {
+    width: 590px;
+    height: 449px;
+
+    @include media-breakpoint-up(md) {
+      margin-left: 10em;
+    }
+
+    @include media-breakpoint-up(lg) {
+      margin-left: 0;
+    }
+
+
+    @include media-breakpoint-up(xl) {
+      width: 695px;
+      margin-left: 0;
+    }
+  }
+
+  .top-img-btn {
+    @extend .emb-btn;
+    position: relative;
+    left: -590px;
+    bottom: -170px;
+
+    @include media-breakpoint-up(xl) {
+      left: -695px;
+      bottom: 204px;
+    }
+  }
+
+  &:before {
+    right: -1%;
+    background: url("../../public/img/pads/red-pad.png") no-repeat;
+    content: '';
+    display: block;
+    width: 741px;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    z-index: -5;
+
+    @include media-breakpoint-up(lg){
+      right: 49%;
+    }
+  }
+}
+
+.breaking-wrap {
+
+  overflow: hidden;
+
+  .full-width {
+    @include media-breakpoint-up(lg){
+      width: 100%;
+      height: 452px;
+    }
+  }
+
+  .break-img-btn {
+    z-index: 2;
+    position: relative;
+    margin-left: 8px;
+    @extend .emb-btn;
+    border-radius: 4px 0 $border-radius 0;
+  }
+
+  .container {
+    height: 100%;
+    position: relative;
+    @include media-breakpoint-down(lg) {
+      background: transparent;
+      background-size: contain;
+    }
+  }
+
+  $container: 1140px;
+
+  figure {
+    height: 452px;
+    padding-top: 50%;
+    border-radius: $border-radius;
+    @include media-breakpoint-up(lg) {
+      width: calc(0.1vw + #{$container / 2});
+    }
+
+    @include media-breakpoint-up(xl) {
+      width: calc(13.1vw + #{$container / 2});
+    }
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 10px;
+    left: 8px;
+    background: url("../../public/img/red-vegetation.svg") center center no-repeat;
+    background-size: 100%;
+  }
+
+}
+
+.article-box {
+  height: 100px;
+  border: 1px solid $alto-grey;
+  border-radius: $border-radius;
+  @include flex-center();
+  @include media-breakpoint-up(lg){
+    height: 222px;
+  }
+
+  &.bg-danger {
+    border: none;
+    color: $white;
+  }
+
+  @include media-breakpoint-up(lg) {
+    .inner-panel {
+      border: 1px solid $white;
+      border-radius: $border-radius;
+    }
+  }
+}
+
+.card {
+  @include media-breakpoint-down(md) {
+    &.h-card {
+      flex-direction: row;
+      margin-bottom: 12px;
+      img {
+        width: 33vw;
+      }
+
+      .card-title {
+        margin-bottom: 0;
+      }
+
+      .card-body {
+        padding: 0 12px;
+      }
+    }
+  }
+}
+
+.news-panel {
+  .card {
+    background-color: transparent;
+  }
+
+  .h2 {
+    font-size: 20px;
+  }
+
+  .card-title {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 26px;
+    letter-spacing: 0;
+    text-align: left;
+
+  }
+}
+
+.sex-panel {
+  @extend .news-panel;
+}
+
+.technology-panel {
+  @extend .news-panel;
+}
+
+.sport-panel {
+  padding: 78px 0 61px;
+  @extend .news-panel;
+  .line-clamp {
+    -webkit-line-clamp: 1;
+  }
+
+  @include media-breakpoint-down(md) {
+    padding: 50px 0 50px;
+  }
+}
+
+.btm-panel-wrap {
+  background-color: $carmine-red;
+  .btm-panel {
+    padding-top: 78px;
+    @extend .sport-panel;
+    color: $white;
+  }
+}
+
+.footer {
+  .nav-link {
+    color: $white;
+  }
+
+  .icon-wrap {
+    background-color: $white;
+  }
+
+  .w-sp {
+    @include media-breakpoint-down(md) {
+      width: 100%;
+    }
+  }
+}
+
+.navbar-1 {
+   @extend .w-100;
+   @extend .py-3;
+   @extend .align-items-center;
+   @extend .justify-content-between;
+   margin-left: 0;
+  @include media-breakpoint-up(lg) {
+    margin-left: -15px;
+  }
+}
+
+.navbar-2 {
+   @extend .px-lg-0;
+   @extend .col-4;
+   @extend .col-lg-9;
+   @extend .justify-content-between;
+   @extend .col-xl-8;
+   @extend .py-0;
+}
+
+.ft-1 {
+  @extend .col-md-6;
+  @extend .col-lg-12;
+  @extend .col-xl-9;
+  @extend .px-lg-0;
+  @extend .flex-v-center;
+  @extend .justify-content-center;
+  @extend .justify-content-xl-start;
+}
+          
+.ft-2 {
+  @extend .col-md-6;
+  @extend .col-lg-12;
+  @extend .col-xl-3;
+  @extend .px-lg-0;
+  @extend .d-xl-flex;
+  @extend .align-items-lg-center;
+  @extend .justify-content-lg-center;
+  @extend .justify-content-xl-start;;
+  @extend .flex-lg-row-reverse;
+  @extend .mt-4;
+  @extend .mt-lg-0;
+}
+
+.ft-3 {
+  @extend .text-white;
+  @extend .mr-lg-4;
+  @extend .mt-4;
+  @extend .mt-xl-0;
+  @extend .flex-v-center;
+  @extend .justify-content-center;
+  @extend .justify-content-md-end;
+  @extend .justify-content-lg-center;
+  @extend .justify-content-xl-end;
+}

@@ -1,0 +1,24 @@
+// Typography Mixins and functions
+@function texts-deep-get($map, $keys...) {
+  @each $key in $keys {
+    $map: map-get($map, $key);
+  }
+  @return $map;
+}
+
+@mixin text() {
+  //font-weight: normal;
+}
+
+
+// Layout Mixins
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-v-center {
+   display: flex;
+   align-items: center;
+}

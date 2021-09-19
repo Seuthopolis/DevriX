@@ -1,0 +1,16 @@
+.flex-center {
+   @include flex-center();
+}
+
+.flex-v-center {
+    @include flex-v-center();
+}
+
+// Truncates text at a specific number of lines
+.line-clamp {
+   display: -webkit-box;
+   -webkit-line-clamp: initial;
+   -webkit-box-orient: vertical;
+   overflow: hidden;
+   text-overflow: ellipsis;
+}

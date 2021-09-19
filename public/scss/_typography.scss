@@ -1,0 +1,56 @@
+// SFProText font
+@font-face {
+  font-family: "SFProText";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("SFProText"), local("SFProText-Regular"), url("#{$font-path-base}/SFProText-Regular.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Roboto"), local("Roboto-Regular"), url("#{$font-path-base}/Roboto-Regular.ttf") format("ttf");
+}
+
+
+// Classes
+@each $size in map-keys($texts) {
+  .text-#{$size} {
+    @include text;
+    font-size: texts-deep-get($texts, $size, 'default', 'font-size');
+    line-height: texts-deep-get($texts, $size, 'default', 'line-height');
+
+    @include media-breakpoint-up(md) {
+      font-size: texts-deep-get($texts, $size, 'md', 'font-size');
+      line-height: texts-deep-get($texts, $size, 'md', 'line-height');
+    }
+  }
+}
+
+
+.text-sextus {
+  font-weight: 600;
+}
+
+b,
+strong {
+  font-weight: 700;
+}
+
+.bolder {
+  font-weight: 800;
+}
+
+.link-primary {
+ color: $primary;
+ text-decoration: none;
+}
+
+.link-secondary {
+  color: $charcoal;
+  text-decoration: none;
+}
+
