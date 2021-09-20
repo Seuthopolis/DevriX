@@ -6,8 +6,6 @@ $( document ).ready(function() {
 
     icon.click(function() {
         if($(this).hasClass("opn")) {
-            console.log($(this));
-                // $(this).removeClass("ml-3 opn");
             $(this).hide(200).fadeIn().removeClass("ml-3 opn");
             navForm.removeClass("spread-out");
             setTimeout(function() {
